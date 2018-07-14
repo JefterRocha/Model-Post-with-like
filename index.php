@@ -19,7 +19,7 @@
 		<?php
 			$posts = getPosts();
 			if(count($posts) == 0){
-				echo 'Desculpe, mais não foram encontrados artigos';
+				echo 'Desculpe, mais não foram encontrados posts no banco de dados';
 			}else{
 				foreach($posts as $data){
 		?>
