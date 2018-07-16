@@ -13,10 +13,16 @@
 		$mysqli = conn();
 		if($posts = $mysqli->query("SELECT post_id, content, likes FROM posts")){
 			while($row = $posts->fetch_object()){
+				$userLoged = (int)['user_id'];
+				$currentPostId = $row->post_id;
+				$checkCurrentLike = $mysqli->query("SELECT like_id FROM likes WHERE user_id = $userLoged AND post_id = $currentPostId");
+				$userLiked = $checkCurrentLike->num_rows ? true: false;
+
 				$datas[] = array(
 					'post_id' => $row->post_id,
 					'content' => $row->content,
-					'likes' => $row->likes
+					'likes' => $row->likes,
+					'user_liked' => $userLiked
 				);
 			}
 			$posts->close();	

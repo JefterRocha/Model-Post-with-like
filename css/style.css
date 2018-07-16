@@ -10,6 +10,15 @@ body {
 	width: 100%;
 }
 
+.warning-content {
+	background-color: #ffc1c1;
+	display: inline-flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 15px;
+	box-shadow: 1px 1px 10px 1px
+}
+
 .post {
 	background-color: #fff;
 	border: 1px solid #dddfe2;
@@ -35,9 +44,9 @@ body {
 }
 
 .num-likes {
-	margin-left: -95%;
 	color: #365899;
 	font-size: 13px;
+	align-self: start
 }
 
 .interaction-components {
@@ -47,8 +56,9 @@ body {
 	justify-content: space-around;
 }
 
-.interaction-components a {
+.interaction-components div {
 	text-decoration: none;
 	font-weight: bolder;
-	color: #616770
+	color: #616770;
+	cursor: pointer
 }

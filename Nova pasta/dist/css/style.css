@@ -1,0 +1,54 @@
+body {
+	background-color: #e9ebee;
+}
+
+.container {
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+}
+
+.post {
+	background-color: #fff;
+	border: 1px solid #dddfe2;
+	border-radius: 4px;
+	width: 30%;
+	min-height: 50px;
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	margin-bottom: 30px;
+	padding: 15px;
+}
+
+.content {
+	width: 100%;
+	background-color: #fff;
+	min-height: 50px;
+	border-bottom: 1px solid #e5e5e5;
+	padding-bottom: 12px;
+	text-align: justify;
+	color: #1d2129;
+}
+
+.num-likes {
+	margin-left: -95%;
+	color: #365899;
+	font-size: 13px;
+}
+
+.interaction-components {
+	width: 100%;
+	display: inline-flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.interaction-components a {
+	text-decoration: none;
+	font-weight: bolder;
+	color: #616770
+}

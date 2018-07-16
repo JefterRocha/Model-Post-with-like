@@ -9,7 +9,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="js/handle_like.js"></script>
 	<link rel="stylesheet" href="css/style.css">
 	<title>Model Posts</title>
@@ -19,21 +18,28 @@
 		<?php
 			$posts = getPosts();
 			if(count($posts) == 0){
-				echo 'Desculpe, mais não foram encontrados posts no banco de dados';
+		?>
+			<div class="warning-content">
+				<div class="warning">Não foram escontrado post em sua timeline</div>
+			</div>
+		<?php
 			}else{
-				foreach($posts as $data){
+				foreach($posts as $post){
 		?>
 		<div class="post">
-			<div class="content"><?php echo $data['content']?></div>
-			<span class="num-likes" id="post-link<?php echo $data['post_id']?>"><?php echo $data['likes']?></span>
+			<div class="content"><?php echo $post['content']?></div>
+			<span class="num-likes <?php echo $post['user_liked']? 'clicked': ''?>" id="post-link<?php echo $post['post_id']?>"><?php echo $post['likes']?></span>
 			<hr>
 			<div class="interaction-components">
-				<a href="" class="like" onclick='handle_like(<?php echo $data['post_id']?>)'>Curtir</a>
-				<a href="" class="coment">Comentar</a>
+				<div href="" id='like-click<?php echo $post['post_id']?>' class="like" onclick='handleLike(<?php echo $post['post_id']?>)'>
+					<?php echo $post['user_liked']? 'Descurtir' : 'Curtir'?>
+				</div>
+				<div href="" class="coment">Comentar</div>
 			</div>
 		</div>
-			<?php
+		<?php
 				}
-			}?>
+			}
+		?>
 	</div>
 </body>
